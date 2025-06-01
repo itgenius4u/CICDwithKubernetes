@@ -143,7 +143,7 @@
           kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
           kubectl delete namespace argocd
 
-### ArgoCD Rollouts 설치
+### Argo Rollouts 설치
 
           # https://argoproj.github.io/argo-rollouts/
           # https://github.com/argoproj/argo-rollouts
@@ -159,7 +159,7 @@
           sudo install -o root -g root -m 0755 kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
           kubectl argo rollouts version
 
-### ArgoCD Rollouts 
+### Argo Rollouts 
 
           # 예제(github기반)
           https://github.com/dennislee-it
@@ -169,9 +169,14 @@
           # rollout 상태확
           kubectl argo rollouts get rollout nginx-rollout --watch
 
+          # -- rollout-nginx.yaml -- 내용을 수정하고 다시 적용 : kubectl apply -f rollout-nginx.yaml
           containers:
             - name: nginx
               image: nginx:1.25
+
+          # promote할때 실행
+          kubectl argo rollouts promote nginx-rollout
+ 
 
 ### Etc
 - Docker install Ubuntu
