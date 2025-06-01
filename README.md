@@ -164,6 +164,11 @@
 
           # 예제(github기반)
           https://github.com/dennislee-it
+          배포 및 관리
+          kubectl apply -f rollout-nginx.yaml
+          kubectl apply -f service.yaml
+          # rollout 상태확
+          kubectl argo rollouts get rollout nginx-rollout --watch
 
 ### Etc
 - Docker install Ubuntu
