@@ -27,7 +27,6 @@
           code --install-extension ms-azuretools.vscode-docker
           code --install-extension vscjava.vscode-java-pack
           code --install-extension vscjava.vscode-gradle
-         함
 
 ### Kubernetes Install Guides 
           
@@ -169,6 +168,10 @@
           kubectl apply -f service.yaml
           # rollout 상태확
           kubectl argo rollouts get rollout nginx-rollout --watch
+
+          containers:
+            - name: nginx
+              image: nginx:1.25
 
 ### Etc
 - Docker install Ubuntu
