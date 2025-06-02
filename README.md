@@ -7,6 +7,8 @@
 | worker-node-01     | worker-node-01     | 2 vCPU, 4 GB RAM, 100GB Disk    | 192.168.15.102 |  26 -> 22            |  -                    |
 | worker-node-02     | worker-node-02     | 2 vCPU, 4 GB RAM, 100GB Disk    | 192.168.15.103 |  27 -> 22            |  -                    |
 * 각각의 서버의 CPU는 2EA로 구성해야함. 1EA로 하면 실행 불가함. master node인 k8s-control은 실행시 느린 경우는 메모리를 8GB로 변경함. 다른 worker node도 Resource가 충분하면 8GB로 변환함.
+* 3개의 nodes 실행중 정지되는 현상이 발생하면 메뉴 -> 머신 -> 실행에서 pause(정지)후 다시 실행하면 멈추는 현상을 해결할 수 있음. 이 부분은 VirtualBox의 문제로 확인됨.
+
 
 ### Visual Studio Code & VirtualBox
 
