@@ -209,7 +209,19 @@
 
           /canary 폴더로 이동
           ###############################################################################################
-          
+          kubectl apply -f rollout-canary.yaml # nginx 1.2버전
+          # roollout-canary.yaml # nginx 1.25버전으로 변경후 저장후 실행
+          kubectl apply -f rollout-canary.yaml # nginx 1.5버전
+
+          # 처음에 100%에서 20%만 적용, 이후에 30초후 50% 적용됨
+          # - setWeight: 20
+          # - pause: { duration: 30 }  # 30초 대기
+          # - setWeight: 50
+          # - pause: {}                # 무기한 대기 (수동 promote 필요)
+
+          # 삭제 방법
+          # kubectl delete -f rollout-canary.yam
+          ###############################################################################################
 
 ### Etc
 - Docker install Ubuntu
