@@ -171,6 +171,7 @@
           # kubectl argo rollouts dashboard -> localhost:3100으로 접속
           
           # 배포 및 관리
+          # my-app의 이름이 같은 부분으로 선언되어 있어서 해당 실행시. 기존의 리소스를 삭제하고 진행이 필요함
           /dev 폴더에서
           /rollouts 폴더로 이동
           ###############################################################################################
@@ -192,7 +193,24 @@
           # kubectl delete -f rollout-nginx.yaml
           ###############################################################################################
 
- 
+           /blue-green 폴더로 이동
+          ###############################################################################################
+          # rollouts 폴더의 내용과 동일하고 단지 하나의 파일로 생성함(rollout-bluegreen.yaml)
+          # 기존의 rollout예제의 rollout-nginx.yaml, services.yaml을 통해서 리소스를 삭제처리해야함.
+          kubectl apply -f rollout-bluegreen.yaml # nginx 1.21버전
+          # rollout-bluegreen.yaml에서 nginx 1.25로 변경하고 다시 실행
+          kubectl apply -f rollout-bluegreen.yaml # nginx 1.25버전
+          # promote할때 실행 
+          kubectl argo rollouts promote nginx-rollout
+          # dashboard에서 확인할 수 있음. dashboard에서도 promote할 수 있음
+          # 삭제 방법
+          # kubectl delete -f services.yaml
+          # kubectl delete -f rollout-nginx.yaml
+          ###############################################################################################
+
+          /canary 폴더로 이동
+          ###############################################################################################
+          
 
 ### Etc
 - Docker install Ubuntu
