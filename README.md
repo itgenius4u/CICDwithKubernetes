@@ -34,8 +34,8 @@
           https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 ### Ubuntu 64bit Server 22.04.x(Minimized) 설치 및 설정
-          - After installing ubuntu 64 server minimum specifications
-          - Create User => user1/1234
+          # After installing ubuntu 64 server minimum specifications
+          # Create User => user1/1234
           
           sudo su
           apt-get install net-tools iputils-ping nano vim
