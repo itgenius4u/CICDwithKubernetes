@@ -187,6 +187,9 @@
           # promote할때 실행
           kubectl argo rollouts promote nginx-rollout
           # dashboard에서 promote 실행할 수 있음
+          # 삭제 방법
+          # kubectl delete -f services.yaml
+          # kubectl delete -f rollout-nginx.yaml
           ###############################################################################################
 
  
