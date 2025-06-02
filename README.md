@@ -33,6 +33,25 @@
           # 각각의 버전별 설치 가이드
           https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
+### Ubuntu 64bit Server 22.04.x(Minimized) 설치 및 설정
+          - After installing ubuntu 64 server minimum specifications
+          - Create User => user1/1234
+          
+          sudo su
+          apt-get install net-tools iputils-ping nano vim
+          printf "Server Name(Each Server)" > /etc/hostname
+          printf "\n192.168.15.101 k8s-control\n192.168.15.102 worker-node-01\n192.168.15.103 worker-node-02\n\n" >> /etc/hosts
+          # 해당 터미널 세션 종류후 다시 접속
+          cat /etc/hosts
+          cat /etc/hostname
+          cat /etc/netplan/50-cloud-init.yaml
+          # ip를 수정하려면 50-cloud-init.yaml을 수정하기 위해서는 해당 파일을 생성하고 다음의 내용을 추가해야함
+          nano /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+          network: {config: disabled}
+          nano /etc/netplan/50-cloud-init.yaml
+          => check ip or change ip
+          netplan apply          
+
 ### Configure Kubernetes IPv4 networking (all nodes)
           sudo nano   /etc/sysctl.d/k8s.conf
           # 밑에 3줄의 내용이 k8s.conf에 입력
