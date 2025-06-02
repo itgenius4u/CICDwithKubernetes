@@ -204,8 +204,7 @@
           kubectl argo rollouts promote nginx-rollout
           # dashboard에서 확인할 수 있음. dashboard에서도 promote할 수 있음
           # 삭제 방법
-          # kubectl delete -f services.yaml
-          # kubectl delete -f rollout-nginx.yaml
+          # kubectl delete -f rollout-bluegreen.yaml
           ###############################################################################################
 
           /canary 폴더로 이동
