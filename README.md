@@ -163,19 +163,32 @@
 
           # 예제(github기반)
           https://github.com/dennislee-it
-          배포 및 관리
+
+          ## 상태 확인 방법
+          ## 1. 명령을 통해서 확인 방법
+          # kubectl argo rollouts get rollout nginx-rollout --watch
+          ## 2. Argo Rollouts Dashboard로 확인 방법(https://argo-rollouts.readthedocs.io/en/stable/dashboard/)
+          # kubectl argo rollouts dashboard -> localhost:3100으로 접속
+          
+          # 배포 및 관리
+          /dev 폴더에서
+          /rollouts 폴더로 이동
+          ###############################################################################################
+          # nginx 1.21버전 -> rollout-nginx.yaml로 적용
           kubectl apply -f rollout-nginx.yaml
           kubectl apply -f services.yaml
-          # rollout 상태확
-          kubectl argo rollouts get rollout nginx-rollout --watch
-
+          # nginx 1.25버전으로 변경후 -> rollout-nginx.yaml로 적용
           # -- rollout-nginx.yaml -- 내용을 수정하고 다시 적용 : kubectl apply -f rollout-nginx.yaml
           containers:
             - name: nginx
               image: nginx:1.25
 
+          # --watch로 확인하거나 dashboard에서 확인
           # promote할때 실행
           kubectl argo rollouts promote nginx-rollout
+          # dashboard에서 promote 실행할 수 있음
+          ###############################################################################################
+
  
 
 ### Etc
